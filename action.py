@@ -8,7 +8,7 @@ def main():
 
     # Grove - Relay connected to port D16
     relay = GroveRelay(16)
-    number = 5
+    number = 0
     while number < 5:
         relay.on()
         print('relay on')
