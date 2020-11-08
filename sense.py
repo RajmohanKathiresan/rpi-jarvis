@@ -27,7 +27,7 @@ def main():
     display_in_lcd(lcd, 0, value)
     time.sleep(2)
     display_in_lcd(lcd, 0, "Light-Moisture")
-    display_in_lcd(lcd, 1, "Temp-Humidity")
+    display_in_lcd(lcd, 1, "Temp-Humi")
     time.sleep(2)
     # Grove - Light Sensor connected to port A0
     light_sensor = GroveLightSensor(0)
