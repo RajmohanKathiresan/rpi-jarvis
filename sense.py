@@ -11,7 +11,7 @@ def display_in_lcd(lcd, row, message):
         display_message = message[0:15]
     else:
         display_message = message
-    lcd.setCursor(1, 0)
+    lcd.setCursor(row, 0)
     print(display_message)
     lcd.write(display_message)
 
@@ -41,7 +41,7 @@ def main():
 
         value = f"Light:{light_sensor_output} {humi}-{temp}-{moisture}"
 
-        display_in_lcd(lcd, value)
+        display_in_lcd(lcd, 1, value)
         time.sleep(20)
 
 
