@@ -4,6 +4,7 @@ from grove.display.jhd1802 import JHD1802
 from seeed_dht import DHT
 from grove.grove_light_sensor_v1_2 import GroveLightSensor
 from grove.grove_moisture_sensor import GroveMoistureSensor
+from grove.grove_relay import GroveRelay
 
 
 def display_in_lcd(lcd, row, message):
