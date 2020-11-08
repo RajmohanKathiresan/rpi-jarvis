@@ -1,7 +1,7 @@
 import time
 
 from grove.display.jhd1802 import JHD1802
-from grove.grove_temperature_humidity_sensor import DHT
+from grove.seeed_dht import DHT
 from grove.grove_light_sensor_v1_2 import GroveLightSensor
 from grove.grove_moisture_sensor import GroveMoistureSensor
 
