@@ -50,10 +50,10 @@ def main():
         fan_status = " "
         if turn_on_fan:
             relay.off() # Turn of the relay will turn on the Fan
-            fan_status = "F"
+            fan_status = "Fan"
         else:
             relay.on() # Turn off the fan
-            fan_status = " "
+            fan_status = "X"
 
 
         row_one = f"L:{light_sensor_output}-M:{moisture} "
