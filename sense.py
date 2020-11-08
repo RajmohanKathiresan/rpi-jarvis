@@ -18,7 +18,7 @@ def display_in_lcd(lcd, row, message):
 
 def main():
 
-    value = "Jarivs - Initializing"
+    value = "Jarivs Sense"
 
     # Grove - 16x2 LCD(White on Blue) connected to I2C port
     lcd = JHD1802()
@@ -39,7 +39,7 @@ def main():
         humi, temp = climate_sensor.read()
         moisture = moisture_sensor.moisture
 
-        value = f"Light:{light_sensor_output} {humi}-{temp}-{moisture}"
+        value = f"L:{light_sensor_output} H:{humi} T:{temp}F M:{moisture}"
 
         display_in_lcd(lcd, 1, value)
         time.sleep(20)
