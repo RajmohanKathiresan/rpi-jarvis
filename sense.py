@@ -27,7 +27,7 @@ def main():
     time.sleep(2)
     display_in_lcd(lcd, 0, "Light-Moisture")
     display_in_lcd(lcd, 1, "Temp-Humidity")
-
+    time.sleep(2)
     # Grove - Light Sensor connected to port A0
     light_sensor = GroveLightSensor(0)
 
@@ -43,8 +43,8 @@ def main():
         humi, temp = climate_sensor.read()
         moisture = moisture_sensor.moisture
 
-        row_one = f"L:{light_sensor_output}-M:{moisture}"
-        row_two = f"H:{humi} T:{temp}F"
+        row_one = f"L:{light_sensor_output} - M:{moisture} "
+        row_two = f"H:{humi} - T:{temp}C "
         display_in_lcd(lcd, 0, row_one)
         display_in_lcd(lcd, 1, row_two)
         time.sleep(2)
