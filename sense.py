@@ -6,14 +6,14 @@ from grove.grove_light_sensor_v1_2 import GroveLightSensor
 from grove.grove_moisture_sensor import GroveMoistureSensor
 
 
-def display_in_lcd(lcd, message):
-    if len(message) > 32:
-        display_message = message[0:31]
+def display_in_lcd(lcd, row, message):
+    if len(message) > 16:
+        display_message = message[0:15]
     else:
         display_message = message
-    lcd.setCursor(0, 0)
+    lcd.setCursor(1, 0)
     print(display_message)
-    # lcd.write(display_message)
+    lcd.write(display_message)
 
 
 def main():
@@ -39,7 +39,7 @@ def main():
         humi, temp = climate_sensor.read()
         moisture = moisture_sensor.moisture
 
-        value = f"{light_sensor_output}-{humi}-{temp}-{moisture}"
+        value = f"Light:{light_sensor_output} {humi}-{temp}-{moisture}"
 
         display_in_lcd(lcd, value)
         time.sleep(20)
