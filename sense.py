@@ -23,7 +23,7 @@ def main():
     # Grove - 16x2 LCD(White on Blue) connected to I2C port
     lcd = JHD1802()
 
-    display_in_lcd(lcd, value)
+    display_in_lcd(lcd, 0, value)
 
     # Grove - Light Sensor connected to port A0
     light_sensor = GroveLightSensor(0)
