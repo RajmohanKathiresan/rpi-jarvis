@@ -38,14 +38,26 @@ def main():
     # Grove - Temperature&Humidity Sensor connected to port D5
     climate_sensor = DHT('11', 5)
 
+    # Grove - Relay connected to port D16
+    relay = GroveRelay(16)
+    relay.on() # It was supposed to be off. Due to mis-wiring it works the other way
 
     while True:
         light_sensor_output = light_sensor.light
         humi, temp = climate_sensor.read()
         moisture = moisture_sensor.moisture
+        turn_on_fan = True if light_sensor_output < 30 else False
+        fan_status = " "
+        if turn_on_fan:
+            relay.off() # Turn of the relay will turn on the Fan
+            fan_status = "F"
+        else:
+            relay.on() # Turn off the fan
+            fan_status = " "
+
 
         row_one = f"L:{light_sensor_output} - M:{moisture} "
-        row_two = f"H:{humi} - T:{temp}C "
+        row_two = f"H:{humi} - T:{temp}C  - {fan_status}"
         display_in_lcd(lcd, 0, row_one)
         display_in_lcd(lcd, 1, row_two)
         time.sleep(2)
