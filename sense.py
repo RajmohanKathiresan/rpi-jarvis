@@ -18,12 +18,15 @@ def display_in_lcd(lcd, row, message):
 
 def main():
 
-    value = "Jarivs Sense"
+    value = "Jarvis Sense"
 
     # Grove - 16x2 LCD(White on Blue) connected to I2C port
     lcd = JHD1802()
 
     display_in_lcd(lcd, 0, value)
+    time.sleep(2)
+    display_in_lcd(lcd, 0, "Light-Moisture")
+    display_in_lcd(lcd, 1, "Temp-Humidity")
 
     # Grove - Light Sensor connected to port A0
     light_sensor = GroveLightSensor(0)
@@ -34,16 +37,17 @@ def main():
     # Grove - Temperature&Humidity Sensor connected to port D5
     climate_sensor = DHT('11', 5)
 
+
     while True:
         light_sensor_output = light_sensor.light
         humi, temp = climate_sensor.read()
         moisture = moisture_sensor.moisture
 
-        value = f"L:{light_sensor_output} H:{humi} T:{temp}F M:{moisture}"
-
-        display_in_lcd(lcd, 1, value)
-        time.sleep(20)
-
+        row_one = f"L:{light_sensor_output}-M:{moisture}"
+        row_two = f"H:{humi} T:{temp}F"
+        display_in_lcd(lcd, 0, row_one)
+        display_in_lcd(lcd, 1, row_two)
+        time.sleep(2)
 
 if __name__ == '__main__':
     main()
