@@ -56,8 +56,8 @@ def main():
             fan_status = " "
 
 
-        row_one = f"L:{light_sensor_output} - M:{moisture} "
-        row_two = f"H:{humi} - T:{temp}C  - {fan_status}"
+        row_one = f"L:{light_sensor_output}-M:{moisture} "
+        row_two = f"H:{humi}-T:{temp}C-{fan_status}"
         display_in_lcd(lcd, 0, row_one)
         display_in_lcd(lcd, 1, row_two)
         time.sleep(2)
