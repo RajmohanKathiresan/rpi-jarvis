@@ -11,9 +11,11 @@ def main():
 
     def on_event(index, event, tm):
         if event & Button.EV_SINGLE_CLICK:
+            print("Button Clicked")
             camera = PiCamera()
+            print(camera)
             camera.start_preview()
-            sleep(2)
+            time.sleep(2)
             camera.capture('/tmp/picture1.jpg')
             camera.stop_preview()
     button.on_event = on_event
