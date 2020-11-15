@@ -1,5 +1,5 @@
 from picamera import PiCamera
-from time
+import time
 
 from grove.button import Button
 from grove.grove_ryb_led_button import GroveLedButton
