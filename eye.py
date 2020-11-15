@@ -4,10 +4,10 @@ import time
 from grove.button import Button
 from grove.grove_ryb_led_button import GroveLedButton
 
+camera = PiCamera()
 
 def capture():
     now = int(time.time())
-    camera = PiCamera()
     camera.capture(f'/home/pi/Pictures/{now}.jpg')
 
 def main():
