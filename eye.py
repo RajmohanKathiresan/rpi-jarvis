@@ -13,13 +13,12 @@ def main():
 
     def on_event(index, event, tm):
         if event & Button.EV_SINGLE_CLICK:
-            print("Button Clicked")
+            now = int(time.time())
+            print(f"Button Clicked {now}")
             camera = PiCamera()
-            print(camera)
             camera.start_preview()
             time.sleep(2)
-            print(now)
-            camera.capture('/tmp/picture1.jpg')
+            camera.capture(f'/tmp/{now}.jpg')
             camera.stop_preview()
     button.on_event = on_event
 
