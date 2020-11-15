@@ -40,7 +40,7 @@ def main():
 
     # Grove - Relay connected to port D16
     relay = GroveRelay(16)
-    relay.on() # It was supposed to be off. Due to mis-wiring it works the other way
+    relay.off() # It was supposed to be off. Due to mis-wiring it works the other way
 
     while True:
         light_sensor_output = light_sensor.light
