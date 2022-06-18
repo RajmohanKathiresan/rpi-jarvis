@@ -42,7 +42,7 @@ def main():
             servo.setAngle(180)
             display_in_lcd(lcd,0,"ON : 180")
             display_in_lcd(lcd, 1, "")
-        elif event & Button.EV_EV_LONG_PRESS:
+        elif event & Button.EV_LONG_PRESS:
             print('long press')
             button.led.light(False)
             servo.setAngle(0)
