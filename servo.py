@@ -17,6 +17,7 @@ def display_in_lcd(lcd, row, message):
         display_message = message
     lcd.setCursor(row, 0)
     print(display_message)
+    lcd.write("")
     lcd.write(display_message)
 
 
