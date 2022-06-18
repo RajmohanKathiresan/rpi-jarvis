@@ -22,6 +22,12 @@ def main():
             print(index)
             print(tm)
             servo.setAngle(180)
+            time.sleep(0.5)
+            servo.setAngle(0)
+            try:
+                print(servo.angle)
+            except:
+                print("something wrong")
 
     button.on_event = on_event
     while True:
