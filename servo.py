@@ -23,6 +23,7 @@ def main():
             print(tm)
             servo.setAngle(180)
 
+    button.on_event = on_event
     while True:
         time.sleep(1)
 
